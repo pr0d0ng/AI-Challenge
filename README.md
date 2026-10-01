@@ -183,54 +183,18 @@ HuggingFace로부터 사전학습 모델 가중치를 다운로드하여 `downlo
 ## 📊 5. Experiment Results & Kaggle Progression
 
 | Version | 모델 및 핵심 기법 | 주요 특징 및 비고 | Public Score |
-| --- | --- | --- | --- |
-| **V1** | Qwen3-VL-8B (1024 Tokens) | Full Image 기준 모델
-
- | 0.95770
-
- |
-| **V1.1** | Qwen3-VL-8B (1536 Tokens) | Visual Token 확장 (Sweet Spot 규명)
-
- | 0.95859
-
- |
-| **V2** | Qwen3-VL-8B (2048 Tokens) | 고해상도 연산량 증가 대비 성능 정체
-
- | 0.95770
-
- |
-| **V2 OCR** | 2048 Tokens + OCR Text Prompt | OCR 오인식 노이즈 유입으로 실패
-
- | 0.95442
-
- |
-| **V3** | **1536 Tokens + Question-Aware OCR Crop** | **OCR Locator 전환 및 멀티 이미지 입력 (핵심 돌파구)**<br> | **0.95918**<br> |
-| **V4** | Probability Ensemble | 동일 계열 모델(V1.1 + V3) 오류 패턴 중복으로 하락
-
- | 0.95740
-
- |
-| **V5** | 4-Way CrossEntropy | Dev 과적합으로 Public Score 하락
-
- | 0.95740
-
- |
-| **V6** | Qwen3-VL-30B-A3B (MoE) | 모델 스케일업 가설 기각 (과적합 발생)
-
- | 0.95233
-
- |
-| **Top-2 Crop** | V3 + 2nd Candidate Crop TTA | 두 번째 Crop 정보 과잉 및 노이즈 추가
-
- | 0.95859
-
- |
-| **TTA-Perm** | Choice Permutation Balanced | 선택지 위치 편향 상쇄
-
- | 0.96067
-
- |
-| **Final** | **V3 + Vote-Switch (2/3 합의 선별 보정)** | **6,714건 중 35건(0.52%) 정밀 수정 (최고 성적 🏆)**<br> | **0.96127**<br> |
+| :---: | :--- | :--- | :---: |
+| **V1** | Qwen3-VL-8B (1024 Tokens) | Full Image 기준 모델 | 0.95770 |
+| **V1.1** | Qwen3-VL-8B (1536 Tokens) | Visual Token 확장 (Sweet Spot 규명) | 0.95859 |
+| **V2** | Qwen3-VL-8B (2048 Tokens) | 고해상도 연산량 증가 대비 성능 정체 | 0.95770 |
+| **V2 OCR** | 2048 Tokens + OCR Text Prompt | OCR 오인식 노이즈 유입으로 실패 | 0.95442 |
+| **V3** | 1536 Tokens + Question-Aware OCR Crop | OCR Locator 전환 및 멀티 이미지 입력 (핵심 돌파구) | **0.95918** |
+| **V4** | Probability Ensemble | 동일 계열 모델(V1.1 + V3) 오류 패턴 중복으로 하락 | 0.95740 |
+| **V5** | 4-Way CrossEntropy | Dev 과적합으로 Public Score 하락 | 0.95740 |
+| **V6** | Qwen3-VL-30B-A3B (MoE) | 모델 스케일업 가설 기각 (과적합 발생) | 0.95233 |
+| **Top-2 Crop** | V3 + 2nd Candidate Crop TTA | 두 번째 Crop 정보 과잉 및 노이즈 추가 | 0.95859 |
+| **TTA-Perm** | Choice Permutation Balanced | 선택지 위치 편향 상쇄 | 0.96067 |
+| **Final** | V3 + Vote-Switch (2/3 합의 선별 보정) | 6,714건 중 35건(0.52%) 정밀 수정 (최고 성적 🏆) | **0.96127** |
 
 ---
 
