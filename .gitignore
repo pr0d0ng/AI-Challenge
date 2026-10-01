@@ -1,0 +1,37 @@
+# 1. 가상환경 (Virtual Environment)
+baseline/
+venv/
+.venv/
+env/
+
+# 2. 대회 데이터셋 (용량 및 보안/규정 문제)
+data/
+
+# 3. 모델 다운로드 및 사전학습 가중치
+downloads/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+
+# 4. 학습 산출물 및 체크포인트 (LoRA 가중치 등 제외)
+output/*/
+checkpoint-*/
+runs/
+wandb/
+
+# (선택) output 안의 최종 제출용 csv 파일만 깃에 올리고 싶다면:
+# !output/*.csv
+
+# 5. Jupyter Notebook 및 Python 캐시
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 6. OS & IDE 설정 파일
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
